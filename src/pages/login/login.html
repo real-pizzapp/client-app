@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="full-content" padding>
+<div class="content-father">
+  <div class="content-block app-title-name">
+    <h1 class="app-title-style">PIZZAPP</h1>
+  </div>
+
+  <div class="content-block input-button-block">
+    <input class ="input-feel" type="text" [(ngModel)]="formInfo.username" name="username" placeholder="username or email">
+    <input class ="input-feel" type="password" [(ngModel)]="formInfo.password" name="password" placeholder="contraseña">
+    <button class="button-decoration" ion-button (click)="login()">Login</button>
+  </div>
+</div>
+</ion-content>

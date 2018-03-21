@@ -1,0 +1,20 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>restaurant-info-form</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div>
+    <input type="text" [(ngModel)]="name" palceholder="name">
+    <input type="text" [(ngModel)]="image" palceholder="image">
+    <input type="text" [(ngModel)]="jamonYQuesoPrice" palceholder="jamonYQuesoPrice">
+    <input type="text" [(ngModel)]="cuatroQuesosPrice" palceholder="cuatroQuesosPrice">
+    <input type="text" [(ngModel)]="barbacoaPrice" palceholder="barbacoaPrice">
+    <input type="text" [(ngModel)]="peperonniPrice" palceholder="peperonniPrice">
+    <input type="text" [(ngModel)]="postalCodesServedto" palceholder="postalCodesServedto">
+    <button (click)="createRestaurantInfo()">Submit Info</button>
+  </div>
+</ion-content>

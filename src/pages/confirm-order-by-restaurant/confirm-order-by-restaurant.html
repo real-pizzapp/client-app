@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>confirm-order-by-restaurant</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-card *ngFor='let order of orders' (click)=navigateToDetail(order._id)>
+    <ion-card-header>
+      <ion-card-title>
+          {{ order._id }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p> {{ order.user }}</p>
+      <p> {{ order.restaurant }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<!-- <table>
+    <tr>
+      <th></th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+</table> -->
+  

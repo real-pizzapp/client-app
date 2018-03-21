@@ -1,0 +1,46 @@
+$pepperoni-color: #cc4f42;
+
+  .content-father{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .content-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .app-title-name{
+    height: 40%;
+  }
+  
+  .app-title-style{
+    color: white;
+  }
+  
+  
+  .input-feel {
+    margin: 3px;
+    text-align: center;
+    background-color: rgb(201, 112, 102);
+    width: 60%;
+    height: 20%;
+    border-radius: 50px;
+    border: none;
+  }
+  
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+  }
+  
+  
+  .button-decoration{
+    color: $pepperoni-color;
+    background-color: white;
+  }
+

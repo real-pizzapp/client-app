@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class = "full-content">
+  <ion-grid>
+
+    <ion-row class = "title-container">
+      <h1> PIZZAPP </h1>
+    </ion-row>
+
+    <ion-row class = "button-container">
+      <button ion-button class = "button-decoration" id="register-button" (click)="registerWithEmail()"> Registro con Email </button>
+      <button ion-button class = "button-decoration" id="facebook-button"> Facebook </button>
+    </ion-row>
+
+    <ion-row class = "footer" (click)=loginWithOldAccount()>
+      <p>Ya tienes una cuenta?</p>
+      <br>
+      <u> INICIAR SESION </u>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>

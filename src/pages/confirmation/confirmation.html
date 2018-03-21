@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title justify-content-center>PEDIDO REALIZADO</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ 
+  <div *ngIf="order">
+    <div class="content-father">
+      <div class="content-rows">
+        <img class="img-sty" src="http://res.cloudinary.com/ddesyiweo/image/upload/v1519397068/oven-icon_x6ximr.svg">
+      </div>
+      <div class="content-rows-column">
+        <p class="general-text">estamos preparando</p>
+        <p class="pizzapp">TU PIZZAPP</p>
+        <p class="general-text">en {{order.restaurant.name }}</p>
+      </div>
+
+      <hr>
+
+      <div class="content-rows">
+        <div class="row-child">
+          <p class="general-text">espera
+            <br> estimada</p>
+          <p class="info">30 mins</p>
+        </div>
+        <div class="row-child">
+          <p class="general-text">estado
+            <br> del pedido</p>
+          <p class="info">{{order.status}}</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="content-rows-column">
+        <p class="general-text">teléfono de contacto</p>
+        <p class="info">915614563</p>
+      </div>
+
+      <div class="but-content">
+        <button ion-button [navPush]="pushPage" class="but-style">LLAMAR</button>
+      </div>
+    </div>
+  </div>
+
+</ion-content>

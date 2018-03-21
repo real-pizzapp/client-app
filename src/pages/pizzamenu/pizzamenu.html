@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>SELECCIONA TU PIZZA</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <div class="all-content">
+
+    <div class="pizza-container">
+      <div class="pizza-items" *ngFor="let pizza of pizzas; let i = index" [attr.data-index]="i">
+        <span class = "pizza-name">{{pizza.name}}</span>
+        <img class="pizza-image" (click)="addPizzaToOrder(i)" src={{pizza.image}}>
+        <div class="bt-containter">
+
+          <div class="flex-items" (click)="reduceOrder(i)"> - </div>
+          <div class="quantity">
+            <span>{{ pizza.number }}</span>
+          </div>
+          <div class="flex-items" (click)="addPizzaToOrder(i)"> + </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <button class="but-style" [disabled]="buttonDisabled" ion-button (click)="continueToRestPage()">SIGUIENTE</button>
+    </div>
+  </div>
+
+
+</ion-content>

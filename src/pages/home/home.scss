@@ -1,0 +1,47 @@
+
+    $pepperoni-color: #cc4f42;
+    $view-port-height: 500px;
+
+    .button-container {
+        @include centerContent();
+        height: $view-port-height * 0.4;
+        flex-direction: column;
+    }
+
+    .button-decoration {
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        border-radius: 50px;
+        width: 60%;
+    }
+
+    .title-container {
+        font-family: 'Source Sans Pro', sans-serif;
+        @include centerContent();
+        height: $view-port-height * 0.4;
+        color: white;
+        text-shadow: 2px 2px black;
+    }
+
+    .footer {
+        height: $view-port-height * 0.2;
+        @include centerContent();
+        color: white;
+    }
+
+    .full-content {
+        background-color: $pepperoni-color;
+    }
+
+    #register-button{
+        background-color: white;
+        color: $pepperoni-color;
+    }
+
+    #facebook-button{
+        color: white;
+        background-color: rgb(59, 89, 152);
+    }
+
+   
+
+
