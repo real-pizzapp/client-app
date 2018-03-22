@@ -16,7 +16,7 @@
       <span>OOPS! No hay restaurantes que repartan a tu zona</span>   
       <img src="http://res.cloudinary.com/ddesyiweo/image/upload/c_scale,w_204/v1520084557/Captura_de_pantalla_2018-03-03_a_las_14.41.41_e4vjfy.png">     
     </div>
-    <button div class="image-holder" *ngFor="let restaurant of restaurants; let i = index" (click)="changeColor(i)" [ngStyle]="colors[i]">
+    <button div class="image-holder" *ngFor="let restaurant of restaurants; let i = index" (click)="changeColor(i); saveRestaurantId(restaurant._id)" [ngStyle]="colors[i]">
       <div>
         <img src="http://via.placeholder.com/200x200">
       </div>
@@ -28,7 +28,7 @@
       </div>
     </button>
     <div class="footer">
-        <button class="but-style" [disabled]="buttonDisabled" ion-button (click)="navigateToNextPage()">SIGUIENTE</button>
+        <button class="but-style" [disabled]="buttonDisabled" ion-button (click)="updateOrderWithRestaurant()">SIGUIENTE</button>
     </div>
   </div>
 </div>

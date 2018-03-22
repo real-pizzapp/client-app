@@ -15,6 +15,7 @@ export class RestaurantlistPage {
   totalPrice: any;
   buttonDisabled: boolean = true;
   colors: Array<object>;
+  restaurantId: String;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -24,11 +25,14 @@ export class RestaurantlistPage {
   ) {}
 
   ionViewDidLoad() {
+    
     this.user = this.auth.user;
     this.restaurantServ
       .getRestaurants()
       .subscribe((restaurants: Array<any>) => {
         this.restaurants = restaurants;
+        console.log('los restaurantes')
+        console.log(this.restaurants)
         this.setInitialColors();
       });
   }
@@ -43,9 +47,14 @@ export class RestaurantlistPage {
     this.buttonDisabled = false;
   }
 
-  updateOrderWithRestaurant(restaurant) {
-    const restaurantId = restaurant;
-    this.orderServ.updateOrderWithRestaurant(restaurantId).subscribe();
+  saveRestaurantId(id){
+    this.restaurantId = id;
+  }
+
+  updateOrderWithRestaurant() {
+    this.orderServ.updateOrderWithRestaurant(this.restaurantId).subscribe(()=>
+    this.navigateToNextPage()
+  );
   }
 
   navigateToNextPage() {

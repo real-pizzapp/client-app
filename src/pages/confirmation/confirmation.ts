@@ -13,7 +13,9 @@ export class ConfirmationPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public orderServ: OrderProvider
-  ) {
+  ) {}
+
+  ionViewDidLoad() {
     this.orderServ.getMyOrder().subscribe(res => {
       this.order = res[0];
     });

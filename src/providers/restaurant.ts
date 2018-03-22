@@ -11,9 +11,7 @@ export class RestaurantProvider {
     withCredentials: true
   };
 
-  constructor(public http: HttpClient) {
-    console.log("Hello RestaurantProvider Provider");
-  }
+  constructor(public http: HttpClient) {}
 
   getRestaurants() {
     return this.http.get(`${BASE_URL}/getNearRestaurants`, this.options);
