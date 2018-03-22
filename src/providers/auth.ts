@@ -58,4 +58,10 @@ export class AuthProvider {
   isLoggedIn() {
     return this.http.get(`${BASE_URL}/loggedin`,this.options)
   }
+
+  recoverPassword(email){
+    console.log('entro en el servicio')
+    console.log(email)
+    return this.http.post(`${BASE_URL}/sendEmail`, { email }, this.options)
+  }
 }

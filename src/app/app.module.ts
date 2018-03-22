@@ -18,6 +18,7 @@ import { AddressPage } from '../pages/address/address'
 import { RestaurantInfoForm } from '../pages/restaurant-info-form/restaurant-info-form'
 import { ConfirmOrderByRestaurantPage } from '../pages/confirm-order-by-restaurant/confirm-order-by-restaurant'
 import { OrderDetailsPage } from '../pages/order-details/order-details'
+import { RecoverPasswordPage } from '../pages/recover-password/recover-password'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -39,7 +40,8 @@ import { AddressProvider } from '../providers/address';
     LogoutButton,
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
-    OrderDetailsPage
+    OrderDetailsPage,
+    RecoverPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -61,7 +63,8 @@ import { AddressProvider } from '../providers/address';
     LogoutButton,
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
-    OrderDetailsPage
+    OrderDetailsPage,
+    RecoverPasswordPage
   ],
   providers: [
     StatusBar,

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { AuthProvider } from '../../providers/auth'
-import { PizzamenuPage } from '../pizzamenu/pizzamenu'
+import { AuthProvider } from '../../providers/auth';
+import { PizzamenuPage } from '../pizzamenu/pizzamenu';
+import { RecoverPasswordPage } from '../recover-password/recover-password'
 
 @Component({
   selector: 'page-login',
@@ -29,5 +30,9 @@ export class LoginPage {
         console.log("You must set a username and a password");
       }
     }
+
+  navToRecoverPassword(){
+    this.navCtrl.push(RecoverPasswordPage)
+  }
 
 }
