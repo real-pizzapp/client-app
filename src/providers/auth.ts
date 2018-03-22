@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
@@ -63,5 +64,7 @@ export class AuthProvider {
     console.log('entro en el servicio')
     console.log(email)
     return this.http.post(`${BASE_URL}/sendEmail`, { email }, this.options)
+      .map(res => res)
   }
+
 }
