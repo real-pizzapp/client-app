@@ -25,14 +25,11 @@ export class RestaurantlistPage {
   ) {}
 
   ionViewDidLoad() {
-    
     this.user = this.auth.user;
     this.restaurantServ
       .getRestaurants()
       .subscribe((restaurants: Array<any>) => {
         this.restaurants = restaurants;
-        console.log('los restaurantes')
-        console.log(this.restaurants)
         this.setInitialColors();
       });
   }

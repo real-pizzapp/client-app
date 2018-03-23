@@ -1,13 +1,7 @@
 import { Component } from "@angular/core";
-import {
-  NavController,
-  NavParams,
-  AlertController,
-  LoadingController
-} from "ionic-angular";
+import { NavController, NavParams, AlertController, LoadingController } from "ionic-angular";
 import { AuthProvider } from "../../providers/auth";
 import { PizzamenuPage } from "../pizzamenu/pizzamenu";
-import { RecoverPasswordPage } from "../recover-password/recover-password";
 
 @Component({
   selector: "page-login",

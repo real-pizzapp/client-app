@@ -14,6 +14,8 @@ import { AddressPage } from "../pages/address/address";
 import { ConfirmationPage } from "../pages/confirmation/confirmation";
 import { RestaurantInfoForm } from "../pages/restaurant-info-form/restaurant-info-form";
 import { ConfirmOrderByRestaurantPage } from "../pages/confirm-order-by-restaurant/confirm-order-by-restaurant";
+import { UserEditPage } from '../pages/user-edit/user-edit'
+
 
 @Component({
   templateUrl: "app.html"
@@ -42,6 +44,7 @@ export class MyApp {
       { title: "Address", component: AddressPage, userRole: "user" },
       { title: "Pizza", component: PizzamenuPage, userRole: "user" },
       { title: "Confirmation", component: ConfirmationPage, userRole: "user" },
+      { title: "Edit User", component: UserEditPage, userRole: "user"},
       { title: "RestInfo", component: RestaurantInfoForm, userRole: "admin" },
       { title: "restaurant-confirm", component: ConfirmOrderByRestaurantPage, userRole: "admin" }
     ];

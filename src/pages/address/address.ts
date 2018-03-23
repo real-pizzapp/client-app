@@ -52,7 +52,6 @@ export class AddressPage {
 
   ionViewDidLoad() {
     this.user = this.authServ.user;
-    console.log("ionViewDidLoad AddressPage");
   }
 
   dismiss() {

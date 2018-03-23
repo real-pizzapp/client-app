@@ -25,10 +25,6 @@ export class RestaurantInfoForm implements restInfo {
     postalCodesServedto: 0
   constructor(public restServ: RestaurantProvider) {}
 
-  ionViewDidLoad() {
-    console.log("ionViewDidLoad RestaurantInfoForm");
-  }
-
   createRestaurantInfo() {
     const name = this.name
     const  image = this.image

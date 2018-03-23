@@ -1,0 +1,21 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>userEdit</ion-title>
+    <button ion-button menuToggle>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div>
+    <label for="username">username</label>
+    <input type="text" [(ngModel)]=username name=username>
+    <label for="password"></label>
+    <input type="text" [(ngModel)]=password name=password>
+    <button (click)=updateUserDetails()>UPDATE</button>
+  </div>
+
+</ion-content>

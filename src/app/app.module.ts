@@ -18,7 +18,7 @@ import { AddressPage } from '../pages/address/address'
 import { RestaurantInfoForm } from '../pages/restaurant-info-form/restaurant-info-form'
 import { ConfirmOrderByRestaurantPage } from '../pages/confirm-order-by-restaurant/confirm-order-by-restaurant'
 import { OrderDetailsPage } from '../pages/order-details/order-details'
-// import { RecoverPasswordPage } from '../pages/recover-password/recover-password'
+import { UserEditPage } from '../pages/user-edit/user-edit'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +26,7 @@ import { AuthProvider } from '../providers/auth';
 import { RestaurantProvider } from '../providers/restaurant';
 import { OrderProvider } from '../providers/order';
 import { AddressProvider } from '../providers/address';
+import { UserProvider } from '../providers/user';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,7 @@ import { AddressProvider } from '../providers/address';
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
-    // RecoverPasswordPage
+    UserEditPage
   ],
   imports: [
     BrowserModule,
@@ -64,6 +65,7 @@ import { AddressProvider } from '../providers/address';
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
+    UserEditPage
   ],
   providers: [
     StatusBar,
@@ -73,6 +75,7 @@ import { AddressProvider } from '../providers/address';
     RestaurantProvider,
     OrderProvider,
     AddressProvider,
+    UserProvider,
   ]
 })
 export class AppModule {}
