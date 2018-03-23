@@ -29,7 +29,7 @@ export class MyApp {
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    public auth: AuthProvider
+    public auth: AuthProvider,
   ) {
     this.initializeApp();
 

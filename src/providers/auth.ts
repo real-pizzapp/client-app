@@ -37,6 +37,8 @@ export class AuthProvider {
   }
 
   signup(username,password) {
+    console.log('entro serv')
+    console.log(username, password)
     return this.http.post(`${BASE_URL}/signup`, {username, password}, this.options)
       .map(user => this.handleUser(user))
       // .catch(this.handleError);

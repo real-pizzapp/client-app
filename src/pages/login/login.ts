@@ -30,6 +30,7 @@ export class LoginPage {
   login() {
     const { username, password } = this.formInfo;
     if (username != "" && password != "") {
+      console.log(username, password)
       this.auth
         .login(username, password)
         .subscribe(() => this.navCtrl.setRoot(PizzamenuPage));

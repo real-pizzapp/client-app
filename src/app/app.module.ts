@@ -3,7 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http'
+import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
 import { LogoutButton } from '../components/logout-button/logout-button';
@@ -18,7 +18,7 @@ import { AddressPage } from '../pages/address/address'
 import { RestaurantInfoForm } from '../pages/restaurant-info-form/restaurant-info-form'
 import { ConfirmOrderByRestaurantPage } from '../pages/confirm-order-by-restaurant/confirm-order-by-restaurant'
 import { OrderDetailsPage } from '../pages/order-details/order-details'
-import { RecoverPasswordPage } from '../pages/recover-password/recover-password'
+// import { RecoverPasswordPage } from '../pages/recover-password/recover-password'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,7 +41,7 @@ import { AddressProvider } from '../providers/address';
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
-    RecoverPasswordPage
+    // RecoverPasswordPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +64,6 @@ import { AddressProvider } from '../providers/address';
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
-    RecoverPasswordPage
   ],
   providers: [
     StatusBar,

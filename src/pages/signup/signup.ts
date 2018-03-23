@@ -23,12 +23,11 @@ export class SignupPage {
 
   signup() {
     const { username, password } = this.formInfo;
-    console.log(username, password)
-    if(username==""||password==""){
+    if(username=="" || password==""){
       this.errorSignup = this.auth.errors[1]
       return 
     }
-    if (username.includes('@') && password != "") {
+    else if (username.includes('@') && password != "") {
       this.auth
         .signup(username, password)
         .subscribe(() => this.navCtrl.setRoot(PizzamenuPage));
