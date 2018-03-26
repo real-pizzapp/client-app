@@ -44,7 +44,7 @@ export class MyApp {
       { title: "Address", component: AddressPage, userRole: "user" },
       { title: "Pizza", component: PizzamenuPage, userRole: "user" },
       { title: "Confirmation", component: ConfirmationPage, userRole: "user" },
-      { title: "Edit User", component: UserEditPage, userRole: "user"},
+      { title: "Perfil", component: UserEditPage, userRole: "user"},
       { title: "RestInfo", component: RestaurantInfoForm, userRole: "admin" },
       { title: "restaurant-confirm", component: ConfirmOrderByRestaurantPage, userRole: "admin" }
     ];

@@ -28,4 +28,8 @@ export class AddressProvider {
       }, this.options)
       .map(res => console.log(res));
   }
+
+  getAddressDetails(addressId){
+    return this.http.get(`${BASE_URL}/getAddress/${addressId}`, this.options)
+  }
 }

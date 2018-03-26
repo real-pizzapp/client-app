@@ -13,8 +13,8 @@ export class UserProvider {
   constructor(public http: HttpClient) {
   }
 
-  updateUser(username, password, userId){
-    return this.http.post(`${BASE_URL}/update/${userId}`, { username, password }, this.options)
+  updateUser(info, userId){
+    return this.http.post(`${BASE_URL}/update/${userId}`, { info }, this.options)
   }
 
 }
