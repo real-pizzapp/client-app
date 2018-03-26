@@ -11,6 +11,7 @@ import { UserProvider } from "../../providers/user";
 export class AddressListPage {
   user: any;
   userAddresses: any;
+  selectedAddress: any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -22,7 +23,7 @@ export class AddressListPage {
 
   ionViewDidLoad() {
     this.user = this.auth.user;
-    this.getAllAddresses()
+    this.getAllAddresses();
   }
 
   getAllAddresses() {
@@ -32,7 +33,9 @@ export class AddressListPage {
   }
 
   dismiss() {
-    let data = { foo: "bar" };
-    this.viewCtrl.dismiss(data);
+    if (this.selectedAddress) {
+      let data = this.selectedAddress;
+      this.viewCtrl.dismiss(data);
+    }
   }
 }
