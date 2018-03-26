@@ -13,6 +13,7 @@ export class UserEditPage {
   username: String;
   password: String;
   userId: String;
+  toastMessage: String[] = ['El usuario se ha editado correctamente', 'Has dejado campos vacios'];
 
   constructor(
       public navCtrl: NavController, 
@@ -20,20 +21,23 @@ export class UserEditPage {
       public auth: AuthProvider,
       public userServ: UserProvider, 
       public toast: ToastController) {
+        console.log(this.auth)
         this.user = this.auth.user;
         this.username = this.user.username;
         this.userId = this.user._id
     }
 
   updateUserDetails(){
-    this.userServ.updateUser(this.username, this.password, this.userId).subscribe(()=>{
-      this.presentToast()
+    console.log('entro en la funcion')
+    this.userServ.updateUser(this.username, this.password, this.userId).subscribe((response)=>{
+      console.log(response)
+      this.presentToast(response)
     })
   }
 
-  presentToast() {
+  presentToast(message) {
     let toast = this.toast.create({
-      message: 'El usuario se ha editado correctamente',
+      message: message,
       duration: 3000,
       position: 'middle',
       showCloseButton: true,

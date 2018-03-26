@@ -1,7 +1,7 @@
-<ion-header>
+<ion-header id ='header'>
 
-  <ion-navbar>
-    <ion-title>userEdit</ion-title>
+  <ion-navbar id = 'edit-user-toolbar'>
+    <!-- <img src="http://res.cloudinary.com/ddesyiweo/image/upload/v1521804998/Blank_Avatar_wrd0vc.png" alt=""> -->
     <button ion-button menuToggle>
     </button>
   </ion-navbar>
@@ -15,7 +15,11 @@
     <input type="text" [(ngModel)]=username name=username>
     <label for="password">Contraseña</label>
     <input type="text" [(ngModel)]=password name=password>
-    <button (click)=updateUserDetails()>UPDATE</button>
+    
+  </div>
+
+  <div>
+      <button (click)=updateUserDetails()>UPDATE</button>
   </div>
 
 </ion-content>
