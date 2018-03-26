@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { MyApp } from './app.component';
-import { LogoutButton } from '../components/logout-button/logout-button';
 
 import { HomePage } from '../pages/home/home';
 import { SignupPage } from '../pages/signup/signup'
@@ -19,6 +18,8 @@ import { RestaurantInfoForm } from '../pages/restaurant-info-form/restaurant-inf
 import { ConfirmOrderByRestaurantPage } from '../pages/confirm-order-by-restaurant/confirm-order-by-restaurant'
 import { OrderDetailsPage } from '../pages/order-details/order-details'
 import { UserEditPage } from '../pages/user-edit/user-edit'
+import { AddressListPage } from '../pages/address-list/address-list'
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -38,11 +39,11 @@ import { UserProvider } from '../providers/user';
     RestaurantlistPage,
     ConfirmationPage,
     AddressPage,
-    LogoutButton,
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
-    UserEditPage
+    UserEditPage,
+    AddressListPage
   ],
   imports: [
     BrowserModule,
@@ -61,11 +62,11 @@ import { UserProvider } from '../providers/user';
     RestaurantlistPage,
     ConfirmationPage,
     AddressPage,
-    LogoutButton,
     RestaurantInfoForm,
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
-    UserEditPage
+    UserEditPage,
+    AddressListPage
   ],
   providers: [
     StatusBar,

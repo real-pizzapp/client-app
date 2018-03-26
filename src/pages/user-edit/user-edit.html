@@ -13,22 +13,10 @@
   <div (click)=changeUsername()>CORREO: {{ user?.username }}</div><ion-icon name="create"></ion-icon>
   <br>
   <br>
+  <div (click)=changePassword()><p>EDITAR Contraseña</p> <ion-icon name="create"></ion-icon></div>
   <br>
-  <div (click)=changePassword()>DIRECCION: {{ address?.streetName }}</div><p>{{ address?.floor }}</p><ion-icon name="create"></ion-icon>
+  <br>
+  <div>DIRECCION: {{ address?.streetName }}</div><p>{{ address?.floor }}</p><ion-icon name="create"></ion-icon>
 
- 
-
-
-  <!-- <div>
-    <label for="username">Usuario</label>
-    <input type="text" [(ngModel)]=username name=username>
-    <label for="password">Contraseña</label>
-    <input type="text" [(ngModel)]=password name=password>
-
-  </div>
-
-  <div>
-    <button (click)=updateUserDetails()>UPDATE</button>
-  </div> -->
 
 </ion-content>

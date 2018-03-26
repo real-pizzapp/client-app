@@ -1,9 +1,13 @@
 import { Component } from "@angular/core";
-import { NavController, NavParams } from "ionic-angular";
+import { NavController, NavParams, ModalController, ViewController } from "ionic-angular";
 import { OrderProvider } from "../../providers/order";
 import { AuthProvider } from "../../providers/auth";
+import { AddressProvider } from '../../providers/address'
+import { UserProvider } from '../../providers/user'
+
 import { RestaurantlistPage } from "../../pages/restaurantlist/restaurantlist";
 import { AddressPage } from "../../pages/address/address";
+import { AddressListPage } from "../../pages/address-list/address-list"
 
 @Component({
   selector: "page-pizzamenu",
@@ -39,16 +43,23 @@ export class PizzamenuPage {
   pizzasOrdered: any[] = [];
   counter: number = 0;
   buttonDisabled: boolean = true;
+  address: Object;
+  userAddresses: any = [{ text: 'pedro'}, {text: 'juan'}];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public orderServ: OrderProvider,
     public auth: AuthProvider,
+    public addressServ: AddressProvider,
+    public userServ: UserProvider,
+    public modalCtrl: ModalController
   ) {}
 
   ionViewDidLoad() {
     this.user = this.auth.user;
+    this.getAddressDetails();
+    // this.getAllAddresses()
   }
 
   checkIfThereIsOrder(){
@@ -92,4 +103,46 @@ export class PizzamenuPage {
  
   }
 
+  getAddressDetails(){
+    if(this.user.address.length === 0) {
+      this.address = 'No hay dirección asociada'
+    } else {
+      this.addressServ.getAddressDetails(this.user.address[0]).subscribe((addressDetails: any) => {
+        this.address = addressDetails.streetName
+      })
+    }
+  }
+
+  openMenu() {
+    let profileModal = this.modalCtrl.create(AddressListPage);
+   profileModal.onDidDismiss(data => {
+     console.log(data);
+   });
+   profileModal.present();
+  }
+
+  getAllAddresses(){
+    console.log('ejecuto esto ====>')
+    this.userServ.getAllAddresses(this.user._id).subscribe((info: any)=>
+    {this.userAddresses = info.address
+    console.log(this.userAddresses)}
+  )
+  }
+
+  
+
 }
+
+// @Component({selector: "page-footer"})
+// class Profile {
+
+//  constructor(public viewCtrl: ViewController) {
+
+//  }
+
+//  dismiss() {
+//    let data = { 'foo': 'bar' };
+//    this.viewCtrl.dismiss(data);
+//  }
+
+// }

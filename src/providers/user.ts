@@ -17,4 +17,8 @@ export class UserProvider {
     return this.http.post(`${BASE_URL}/update/${userId}`, { info }, this.options)
   }
 
+  getAllAddresses(userId){
+    return this.http.get(`${BASE_URL}/getUserAddresses/${userId}`, this.options)
+  }
+
 }

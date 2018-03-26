@@ -26,19 +26,11 @@ export class UserEditPage {
       public toast: ToastController, 
       public addressServ: AddressProvider,
       public alert: AlertController) {
-        console.log(this.auth)
         this.user = this.auth.user;
         this.username = this.user.username;
         this.userId = this.user._id
         this.getAddressDetails()
     }
-
-  // updateUserDetails(){
-  //   this.userServ.updateUser(this.username, this.password, this.userId).subscribe((response)=>{
-  //     console.log(response)
-  //     this.presentToast(response)
-  //   })
-  // }
 
   presentToast(message) {
     let toast = this.toast.create({
@@ -77,11 +69,13 @@ export class UserEditPage {
           }
         },
         {
-          text: "OK",
+          text: 'OK',
           handler: data => {
             if (data) {
               this.userServ.updateUser(data, this.userId).subscribe((newInfo: any) => 
-                this.user.username = newInfo.username)
+                {this.user.username = newInfo.username
+                this.presentToast('usuario actualizado correctamente')}
+              )
             } 
           }
         }
@@ -99,13 +93,10 @@ export class UserEditPage {
   }
 
   getAddressDetails(){
-    console.log('entro en el front ')
-    console.log(this.user.address[0])
     if(this.user.address.length === 0) {
       this.address = 'No hay dirección asociada'
     } else {
       this.addressServ.getAddressDetails(this.user.address[0]).subscribe((addressDetails) => {
-        console.log(addressDetails)
         this.address = addressDetails
       })
     }

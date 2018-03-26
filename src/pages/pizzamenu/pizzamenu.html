@@ -31,7 +31,14 @@
     <div class="footer">
       <button class="but-style" [disabled]="buttonDisabled" ion-button (click)="continueToRestPage()">SIGUIENTE</button>
     </div>
+
+    <button ion-button block (click)="openMenu()">
+        Direccion actual: {{ address }}
+    </button>
+
   </div>
 
 
+
 </ion-content>
+
