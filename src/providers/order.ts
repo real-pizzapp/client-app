@@ -29,8 +29,8 @@ export class OrderProvider {
     return this.http.get(`${BASE_URL}/getAllOrders/${orderId}`)
   }
 
-  updateOrderWithRestaurant(restaurantId) {
-    return this.http.patch(`${BASE_URL}/updateOrderWithRestaurant/${this.order._id}`, { restaurantId }, this.options)
+  updateOrderWithRestaurantAndAddress(restaurantId, pickedAddress) {
+    return this.http.patch(`${BASE_URL}/updateOrderWithRestaurant/${this.order._id}`, { restaurantId, pickedAddress }, this.options)
   }
   
   updateOrderStatus(orderId, orderStatus){

@@ -16,6 +16,7 @@ export class RestaurantlistPage {
   buttonDisabled: boolean = true;
   colors: Array<object>;
   restaurantId: String;
+  pickedAddress:any;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -26,6 +27,7 @@ export class RestaurantlistPage {
 
   ionViewDidLoad() {
     this.user = this.auth.user;
+    this.pickedAddress = this.navParams.data
     this.restaurantServ
       .getRestaurants()
       .subscribe((restaurants: Array<any>) => {
@@ -49,7 +51,7 @@ export class RestaurantlistPage {
   }
 
   updateOrderWithRestaurant() {
-    this.orderServ.updateOrderWithRestaurant(this.restaurantId).subscribe(()=>
+    this.orderServ.updateOrderWithRestaurantAndAddress(this.restaurantId, this.pickedAddress).subscribe(()=>
     this.navigateToNextPage()
   );
   }

@@ -54,8 +54,8 @@ export class PizzamenuPage {
   pizzasOrdered: any[] = [];
   counter: number = 0;
   buttonDisabled: boolean = true;
-  address: any;
-  userAddresses: any = [{ text: "pedro" }, { text: "juan" }];
+  addressName: any;
+  fullAddress: any
 
   constructor(
     public navCtrl: NavController,
@@ -114,18 +114,20 @@ export class PizzamenuPage {
       .subscribe(() => {
         this.user.address.length === 0
           ? this.navCtrl.push(AddressPage)
-          : this.navCtrl.push(RestaurantlistPage);
+          : this.navCtrl.push(RestaurantlistPage, this.fullAddress);
       });
   }
 
   getAddressDetails() {
     if (this.user.address.length === 0) {
-      this.address = "No hay dirección asociada";
+      this.addressName = "No hay dirección asociada";
     } else {
       this.addressServ
         .getAddressDetails(this.user.address[0])
         .subscribe((addressDetails: any) => {
-          this.address = addressDetails.streetName;
+          console.log(addressDetails)
+          this.addressName = addressDetails.streetName;
+          this.fullAddress = addressDetails
         });
     }
   }
@@ -134,7 +136,8 @@ export class PizzamenuPage {
     let profileModal: Modal = this.modalCtrl.create(AddressListPage);
     profileModal.present();
     profileModal.onDidDismiss(data => {
-      this.address = data
+      this.fullAddress = data
+      this.addressName = data.streetName
     })
   }
 }

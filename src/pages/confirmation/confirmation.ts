@@ -18,6 +18,8 @@ export class ConfirmationPage {
   ionViewDidLoad() {
     this.orderServ.getMyOrder().subscribe(res => {
       this.order = res[0];
+      console.log('mipedido=============>')
+      console.log(this.order)
     });
   }
 }
