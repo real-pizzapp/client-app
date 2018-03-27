@@ -3,6 +3,7 @@ import { NavController, NavParams, ViewController } from "ionic-angular";
 import { AddressProvider } from "../../providers/address";
 import { AuthProvider } from "../../providers/auth";
 import { UserProvider } from "../../providers/user";
+import { NewAddressPage } from "../new-address/new-address"
 
 @Component({
   selector: "page-address-list",
@@ -30,6 +31,11 @@ export class AddressListPage {
     this.userServ.getAllAddresses(this.user._id).subscribe((info: any) => {
       this.userAddresses = info.address;
     });
+  }
+
+  addNewAddress(){
+    this.viewCtrl.dismiss()
+    this.navCtrl.push(NewAddressPage)
   }
 
   dismiss() {

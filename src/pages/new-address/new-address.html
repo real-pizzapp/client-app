@@ -1,0 +1,29 @@
+<ion-header>
+
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>AÑADIR DIRECCION</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+  
+  <div class="father-content">
+    <ion-searchbar class="searchbar-style"[(ngModel)]="autocomplete.query" (ionInput)="updateSearch()" (ionCancel)="dismiss()">Search for a place</ion-searchbar>
+    <div *ngIf=!formInfo.streetName>
+      <div *ngFor="let item of autocompleteItems" tappable (click)="chooseItem(item)">
+        {{ item.description }}
+      </div>
+    </div>
+
+    <input class="input-style" type="text" [(ngModel)]="formInfo.streetName" name="streetName" placeholder="calle">
+    <input class="input-style" type="text" [(ngModel)]="formInfo.floor" name="Floor" placeholder="n/puerta">
+    <input class="input-style" type="text" [(ngModel)]="formInfo.postalCode" name="Number" placeholder="codigo postal">
+    <input class="input-style" type="text" [(ngModel)]="formInfo.coordinates" name="Coordinates" hidden>
+  
+    <button class="but-style" ion-button (click)="addAddress()"> CONFIRMAR </button>
+  </div>
+  </ion-content>

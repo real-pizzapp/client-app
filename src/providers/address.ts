@@ -15,9 +15,7 @@ export class AddressProvider {
     console.log("Hello AddressProvider Provider");
   }
 
-  addAddresstoUser(userId, name, surname, telephone, streetName, floor, postalCode, coordinates) {
-    console.log('entro en el address service');
-    console.log(userId, name, surname, telephone, streetName, floor, postalCode, coordinates)
+  addAddresstoUserAndGeneralInfo(userId, name, surname, telephone, streetName, floor, postalCode, coordinates) {
     return this.http
       .post(`${BASE_URL}/create`, {
         userId,
@@ -27,6 +25,10 @@ export class AddressProvider {
         coordinates,
       }, this.options)
       .map(res => console.log(res));
+  }
+
+  newAddress(userId, streetName, floor, postalCode, coordinates){
+    return this.http.post(`${BASE_URL}/addAddress`,{userId, streetName, floor, postalCode, coordinates}, this.options)
   }
 
   getAddressDetails(addressId){

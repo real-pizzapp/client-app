@@ -19,6 +19,7 @@ import { ConfirmOrderByRestaurantPage } from '../pages/confirm-order-by-restaura
 import { OrderDetailsPage } from '../pages/order-details/order-details'
 import { UserEditPage } from '../pages/user-edit/user-edit'
 import { AddressListPage } from '../pages/address-list/address-list'
+import { NewAddressPage } from "../pages/new-address/new-address"
 
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -43,7 +44,8 @@ import { UserProvider } from '../providers/user';
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
     UserEditPage,
-    AddressListPage
+    AddressListPage,
+    NewAddressPage
   ],
   imports: [
     BrowserModule,
@@ -66,7 +68,8 @@ import { UserProvider } from '../providers/user';
     ConfirmOrderByRestaurantPage,
     OrderDetailsPage,
     UserEditPage,
-    AddressListPage
+    AddressListPage,
+    NewAddressPage
   ],
   providers: [
     StatusBar,

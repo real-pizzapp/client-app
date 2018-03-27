@@ -2,19 +2,21 @@ import { Component, NgZone } from "@angular/core";
 import { NavController, NavParams } from "ionic-angular";
 import { ViewController } from "ionic-angular";
 
-import { RestaurantlistPage } from "../../pages/restaurantlist/restaurantlist"
+import { PizzamenuPage } from '../../pages/pizzamenu/pizzamenu'
+
+
 import { AddressProvider } from "../../providers/address";
+
 
 import { AuthProvider } from "../../providers/auth";
 
 @Component({
-  selector: "page-address",
-  templateUrl: "address.html"
+  selector: 'page-new-address',
+  templateUrl: 'new-address.html',
 })
-export class AddressPage {
-  name;
-  surname;
-  telephone;
+export class NewAddressPage {
+
+  
   postalCode;
   latitude;
   longitude;
@@ -110,13 +112,16 @@ export class AddressPage {
 
   addAddress() {
     const userId = this.user._id;
-    const { name, surname, telephone, streetName, floor, postalCode, coordinates } = this.formInfo;
-    if(name === undefined || surname === undefined || telephone === undefined || postalCode === undefined || streetName ===  undefined || floor === undefined)
+    const { streetName, floor, postalCode, coordinates } = this.formInfo;
+    if( postalCode === undefined || streetName ===  undefined || floor === undefined)
     { console.log("you must fill in all details") 
     } else {
       this.addressServ
-      .addAddresstoUserAndGeneralInfo(userId, name, surname, telephone, streetName, floor, postalCode, coordinates)
-      .subscribe(()=> {this.navCtrl.setRoot(RestaurantlistPage)});
+      .newAddress(userId, streetName, floor, postalCode, coordinates)
+      .subscribe(()=> {
+        console.log('entro pero no quiero hacer el pop')
+        this.navCtrl.setRoot(PizzamenuPage)});
     }
   }
+
 }

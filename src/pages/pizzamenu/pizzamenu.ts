@@ -125,7 +125,7 @@ export class PizzamenuPage {
       this.addressServ
         .getAddressDetails(this.user.address[0])
         .subscribe((addressDetails: any) => {
-          console.log(addressDetails)
+          if(addressDetails)
           this.addressName = addressDetails.streetName;
           this.fullAddress = addressDetails
         });
@@ -136,8 +136,11 @@ export class PizzamenuPage {
     let profileModal: Modal = this.modalCtrl.create(AddressListPage);
     profileModal.present();
     profileModal.onDidDismiss(data => {
-      this.fullAddress = data
-      this.addressName = data.streetName
+      if(data){
+        this.fullAddress = data
+        this.addressName = data.streetName
+      }
+     
     })
   }
 }
