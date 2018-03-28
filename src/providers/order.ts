@@ -4,7 +4,8 @@ import "rxjs/add/operator/map";
 import "rxjs/add/operator/catch";
 
 const BASE_DOMAIN = "http://localhost:3000";
-const BASE_URL = `${BASE_DOMAIN}/api/order`;
+const DEPLOYED_DOMAIN = 'https://pizzappcompany.herokuapp.com'
+const BASE_URL = `${DEPLOYED_DOMAIN}/api/order`;
 
 @Injectable()
 export class OrderProvider {

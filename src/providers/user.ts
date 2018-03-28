@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 const BASE_DOMAIN = "http://localhost:3000";
-const BASE_URL = `${BASE_DOMAIN}/api/user`;
+const DEPLOYED_DOMAIN = 'https://pizzappcompany.herokuapp.com'
+const BASE_URL = `${DEPLOYED_DOMAIN}/api/user`;
 
 @Injectable()
 export class UserProvider {

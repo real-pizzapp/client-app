@@ -3,7 +3,8 @@ import { Injectable } from "@angular/core";
 import "rxjs/add/operator/map";
 
 const BASE_DOMAIN = "http://localhost:3000";
-const BASE_URL = `${BASE_DOMAIN}/api/restaurant`;
+const DEPLOYED_DOMAIN = 'https://pizzappcompany.herokuapp.com'
+const BASE_URL = `${DEPLOYED_DOMAIN}/api/restaurant`;
 
 @Injectable()
 export class RestaurantProvider {

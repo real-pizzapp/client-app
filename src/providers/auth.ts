@@ -6,7 +6,8 @@ import 'rxjs/add/operator/catch';
 
 
 const BASE_DOMAIN = 'http://localhost:3000';
-const BASE_URL = `${BASE_DOMAIN}/api/auth`;
+const DEPLOYED_DOMAIN = 'https://pizzappcompany.herokuapp.com'
+const BASE_URL = `${DEPLOYED_DOMAIN}/api/auth`;
 
 @Injectable()
 export class AuthProvider {
@@ -39,7 +40,7 @@ export class AuthProvider {
   signup(username,password) {
     console.log('entro serv')
     console.log(username, password)
-    return this.http.post(`${BASE_URL}/signup`, {username, password}, this.options)
+    return this.http.post(`${BASE_URL}/signup`, {username, password})
       .map(user => this.handleUser(user))
       // .catch(this.handleError);
   }
